@@ -1,4 +1,3 @@
-
 import pyttsx3 #pip install pyttsx3
 import speech_recognition as sr #pip install speechRecognition
 import datetime
@@ -28,7 +27,7 @@ def wishMe():
         print("Good Morning!")
         speak("Good Morning!")
 
-    elif hour>=12 and hour<18:
+    elif hour>=12 and hour<19:
         print("Good Afternoon!")
         speak("Good Afternoon!")   
 
@@ -39,23 +38,23 @@ def wishMe():
 
 def hello():
     wishMe()
-    print("This is made by Manvir Singh. I can convert voice into text")
-    speak("This is made by Manvir Singh. I can convert voice into text")
+    print("This project is made by Manvir Singh. I can convert voice into text")
+    speak("This project is made by Manvir Singh. I can convert voice into text")
 
 
            
 
 def takeCommand():
-    #It takes microphone input from the user and returns string output
+    #It takes microphone input as audio from the user and returns its text form in string output
 
     r = sr.Recognizer()
     with sr.Microphone() as source:
-        print("Listening...")
+        print("Listening.....")
         r.pause_threshold = 1
         audio = r.listen(source)
 
     try:
-        print("Recognizing...")    
+        print("Recognizing.....")    
         query = r.recognize_google(audio, language='en-in')
         print(f"You said: {query}\n")
 
